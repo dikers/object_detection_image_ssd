@@ -1,8 +1,7 @@
 # 物品识别
 
-
-
-
+使用SSD 算法识别图片中的物体
+```
 
 ├── README.md                   说明文件
 ├── SSD300                      SSD算法模型
@@ -13,3 +12,15 @@
 └── raw-data                    训练数据文件夹
     ├── Annotations             标记数据
     └── JPEGImages              图片文件
+
+```
+ 
+ 
+ 
+###训练模型
+参考[server-train.ipynb](./server-train.ipynb)
+
+
+###使用模型
+
+参考 [client-camera.py](./client-camera.py)
