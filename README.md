@@ -60,7 +60,7 @@ raw-data/
 打标签工具下载地址
 [项目地址](https://github.com/wkentaro/labelme)
 
-![image](http://raw.githubusercontent.com/tzutalin/labelImg/master/demo/demo3.jpg)
+![image](https://github.com/wkentaro/labelme/raw/master/examples/instance_segmentation/.readme/annotation.jpg)
 
 ```
 Ctrl + u	Load all of the images from a directory
