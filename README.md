@@ -17,11 +17,12 @@
  
  
  
-###训练模型
+### 训练模型
+
 参考[server-train.ipynb](./server-train.ipynb)
 
 
-###使用模型
+### 使用模型
 
 参考 [client-camera.py](./client-camera.py)
 
