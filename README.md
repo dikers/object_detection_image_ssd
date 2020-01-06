@@ -64,6 +64,18 @@ raw-data/
 
 ![image](https://github.com/wkentaro/labelme/raw/master/examples/instance_segmentation/.readme/annotation.jpg)
 
+
+labelme 工具安装
+```shell
+conda create --name=labelme
+# window 
+activate labelme   # (window环境命令)
+source activate labelme  # linux or mac
+pip install labelme
+
+
+```
+
 ```
 Ctrl + u	Load all of the images from a directory
 Ctrl + r	Change the default annotation target dir
