@@ -26,7 +26,7 @@
 
 参考 [client-camera.py](./client-camera.py)
 
----------------------------------------------------
+===================================
 
 ### 第一步 准备图片
 
@@ -56,26 +56,33 @@ raw-data/
 
 然后进行打标签工作
 
----------------------------------
+===================================
 ### 第二步 打标签
 
+
+[anaconda 软件下载](https://www.anaconda.com/distribution/#download-section)
+
+
 打标签工具下载地址
-[项目地址](https://github.com/wkentaro/labelme)
 
-![image](https://github.com/wkentaro/labelme/raw/master/examples/instance_segmentation/.readme/annotation.jpg)
+[项目地址](https://github.com/tzutalin/labelImg)
 
+[下载LabelImg](https://github.com/tzutalin/labelImg/archive/master.zip)
 
-labelme 工具安装
+labelImg 工具安装
+
 ```shell
-conda create --name=labelme
+conda create --name=demo_env
 # window 
-activate labelme   # (window环境命令)
-source activate labelme  # linux or mac
-pip install labelme
+activate demo_env   # (window环境命令)
+source activate demo_env  # linux or mac
 
-
+conda install pyqt=5
+pyrcc5 -o libs/resources.py resources.qrc
+python labelImg.py
 ```
 
+快捷键
 ```
 Ctrl + u	Load all of the images from a directory
 Ctrl + r	Change the default annotation target dir
