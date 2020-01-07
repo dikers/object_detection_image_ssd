@@ -11,18 +11,17 @@ from SSD300.ssd_utils import BBoxUtility
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
-MODEL_NAME = './output/checkpoint-08-0.7219.hdf5'
-voc_classes = ['401', '402', '403', '201', '202']
+MODEL_NAME = './output/checkpoint-19-0.8947.hdf5'
+label_list = ['401', '402', '403', '201', '202', '101', '102', '103', '105', '106', '107', '301', '302']
 
-
-
-IMAGE_WIDTH  = 800
-IMAGE_HEIGHT = 600
+IMAGE_WIDTH = 1024
+IMAGE_HEIGHT = 768
 SLEEP_TIME = 1
 MAX_TARGET_COUNT = 2
 confidence = 0.4
+index_camera = 0
 
-NUM_CLASSES = len(voc_classes) + 1
+NUM_CLASSES = len(label_list) + 1
 
 def init_model():
 
@@ -89,7 +88,7 @@ def draw_image(cv2, image , image_path , model, bbox_util):
         xmax = int(round(image.shape[1] * item[4]))
         ymax = int(round(image.shape[0] * item[5]))
         color = (0, 255, 0)
-        name = '{} : {}% '.format(voc_classes[int(item[0])-1], int(item[1]*100))
+        name = '{} : {}% '.format(label_list[int(item[0])-1], int(item[1]*100))
         cv2.putText(img, name, (xmin, ymin), font, 1.2, (255, 255, 255), 2)
 
         cv2.rectangle(image, (xmin, ymin), (xmax, ymax), color, 2)
@@ -100,7 +99,7 @@ def draw_image(cv2, image , image_path , model, bbox_util):
 
 model, bbox_util = init_model()
 print('------------')
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(index_camera)
 show_count = 0
 while(cap.isOpened()):  #isOpened()  检测摄像头是否处于打开状态
     ret,img = cap.read()  #把摄像头获取的图像信息保存之img变量
